@@ -1,5 +1,7 @@
-import React, { useEffect, useState } from 'react';
-import './App.css'; // Optional: for custom styling
+import React, { useEffect, useState } from "react";
+import "./App.css";
+import "./Home";
+import Home from "./Home";
 
 function App() {
   const [data, setData] = useState([]);
@@ -7,7 +9,7 @@ function App() {
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    fetch('https://api.restful-api.dev/objects')
+    fetch("https://api.restful-api.dev/objects")
       .then((response) => {
         if (!response.ok) {
           throw new Error(`HTTP error! status: ${response.status}`);
@@ -39,6 +41,7 @@ function App() {
           </div>
         ))}
       </div>
+      <Home></Home>
     </div>
   );
 }
